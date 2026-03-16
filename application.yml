@@ -1,6 +1,12 @@
+server:
+  port: 33400
+
 kafka:
   topic:
     name: trader-updates
+
+general:
+  kafka-topic: trader-updates
 
 spring:
   kafka:
