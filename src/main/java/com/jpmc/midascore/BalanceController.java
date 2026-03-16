@@ -18,7 +18,7 @@ public class BalanceController {
 
     @GetMapping("/balance")
     public Balance getBalance(@RequestParam Long userId) {
-        UserRecord user = userRepository.findById(userId);
+        UserRecord user = userRepository.findByIdIs(userId);
         if (user == null) return new Balance(0);
         return new Balance(user.getBalance());
     }

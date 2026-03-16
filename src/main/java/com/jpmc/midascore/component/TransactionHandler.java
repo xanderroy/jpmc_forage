@@ -21,8 +21,8 @@ public class TransactionHandler {
     }
 
     public void handle(Transaction transaction) {
-        UserRecord sender = userRepository.findById(transaction.getSenderId());
-        UserRecord recipient = userRepository.findById(transaction.getRecipientId());
+        UserRecord sender = userRepository.findByIdIs(transaction.getSenderId());
+        UserRecord recipient = userRepository.findByIdIs(transaction.getRecipientId());
 
         if (sender == null || recipient == null) return;
         if (sender.getBalance() < transaction.getAmount()) return;

@@ -43,7 +43,7 @@ public class TaskFourTests {
         logger.info("----------------------------------------------------------");
         logger.info("use your debugger to find out what wilbur's balance is after all transactions are processed");
         logger.info("kill this test once you find the answer");
-        UserRecord wilbur = userRepository.findById(9);
+        UserRecord wilbur = userRepository.findByIdIs(9);
         logger.info(String.valueOf(wilbur.getBalance()));
         while (true) {
 
